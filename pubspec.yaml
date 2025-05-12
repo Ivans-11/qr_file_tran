@@ -1,0 +1,34 @@
+name: qr_file_tran
+description: "通过二维码在设备间离线传输文件 | Offline file transfer between devices via QR code"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  path_provider: ^2.1.2
+  permission_handler: ^11.3.0
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^3.5.6
+  shared_preferences: ^2.2.2
+  provider: ^6.1.1
+  file_picker: ^10.1.2
+  path: ^1.8.3
+  crypto: ^3.0.3
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
