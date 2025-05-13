@@ -49,6 +49,8 @@ class AppLocalizations {
       'transferSuccessContent': 'All files have been successfully received and saved to: {path}',
       'chunkSize': 'QR Code Data Size',
       'chunkSizeHint': 'Size of data in each QR code frame (512-1400 bytes)',
+      'pcNotSupportedTitle': 'Not Supported',
+      'pcNotSupportedContent': 'Receiving files is not supported on PC platform. Please use a mobile device.',
     },
     'zh': {
       'appTitle': 'QR文件传输',
@@ -86,6 +88,8 @@ class AppLocalizations {
       'transferSuccessContent': '所有文件已成功接收并保存至：{path}',
       'chunkSize': '二维码数据大小',
       'chunkSizeHint': '每个二维码帧的数据大小（512-1400字节）',
+      'pcNotSupportedTitle': '不支持',
+      'pcNotSupportedContent': 'PC平台暂不支持接收文件功能，请使用移动设备。',
     },
   };
 
@@ -122,6 +126,8 @@ class AppLocalizations {
   String get transferSuccessContent => _localizedValues[locale.languageCode]!['transferSuccessContent']!;
   String get chunkSize => _localizedValues[locale.languageCode]!['chunkSize']!;
   String get chunkSizeHint => _localizedValues[locale.languageCode]!['chunkSizeHint']!;
+  String get pcNotSupportedTitle => _localizedValues[locale.languageCode]!['pcNotSupportedTitle']!;
+  String get pcNotSupportedContent => _localizedValues[locale.languageCode]!['pcNotSupportedContent']!;
 
   String processingProgress(int current, int total, double percentage) {
     return _localizedValues[locale.languageCode]!['processingProgress']!

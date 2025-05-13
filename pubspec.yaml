@@ -2,7 +2,7 @@ name: qr_file_tran
 description: "通过二维码在设备间离线传输文件 | Offline file transfer between devices via QR code"
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 1.1.0+2
 
 environment:
   sdk: ^3.7.2

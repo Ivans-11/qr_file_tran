@@ -182,12 +182,16 @@ class _SenderScreenState extends State<SenderScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => SenderProcessingScreen(files: _selectedFiles),
+        builder: (context) => SenderProcessingScreen(
+          files: _selectedFiles,
+          onProcessingComplete: (success) {
+            if (success) {
+              _clearFiles();
+            }
+          },
+        ),
       ),
-    ).then((_) {
-      // Clear file list
-      _clearFiles();
-    });
+    );
   }
 
   @override

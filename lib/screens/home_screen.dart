@@ -3,9 +3,12 @@ import '../l10n/app_localizations.dart';
 import 'sender_screen.dart';
 import 'receiver_screen.dart';
 import 'settings_screen.dart';
+import 'dart:io' show Platform;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  bool get isDesktop => Platform.isWindows || Platform.isLinux || Platform.isMacOS;
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +54,26 @@ class HomeScreen extends StatelessWidget {
               icon: const Icon(Icons.download),
               label: Text(l10n.receiveFiles),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ReceiverScreen()),
-                );
+                if (isDesktop) {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text(l10n.pcNotSupportedTitle),
+                      content: Text(l10n.pcNotSupportedContent),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text(l10n.confirm),
+                        ),
+                      ],
+                    ),
+                  );
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ReceiverScreen()),
+                  );
+                }
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(

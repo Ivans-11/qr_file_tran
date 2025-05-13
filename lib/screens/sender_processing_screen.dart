@@ -11,10 +11,12 @@ import 'sender_display_screen.dart';
 
 class SenderProcessingScreen extends StatefulWidget {
   final List<FileItem> files;
+  final Function(bool) onProcessingComplete;
 
   const SenderProcessingScreen({
     super.key,
     required this.files,
+    required this.onProcessingComplete,
   });
 
   @override
@@ -104,6 +106,7 @@ class _SenderProcessingScreenState extends State<SenderProcessingScreen> {
           ),
         ),
       );
+      widget.onProcessingComplete(true);
     }
   }
 
@@ -131,6 +134,7 @@ class _SenderProcessingScreenState extends State<SenderProcessingScreen> {
                     onPressed: () {
                       Navigator.pop(context);
                       Navigator.pop(context);
+                      widget.onProcessingComplete(false);
                     },
                     child: Text(l10n.yes),
                   ),
